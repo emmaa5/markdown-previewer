@@ -1,0 +1,54 @@
+import * as reactMarkdown from "https://cdn.skypack.dev/react-markdown@8.0.5";
+import ReactMarkdown from "https://cdn.skypack.dev/react-markdown@8.0.5"
+import remarkGfm from "https://cdn.skypack.dev/remark-gfm@3.0.1"
+
+function App() {
+  const [state, setState] = React.useState({ input: `# Welcome to my markdown previewer
+  ## Why did I built this?
+  I'm a beginner developer studying with [Freecodecamp](). And this is one of the certificate projects for the [Frontend frameworks]() course
+  
+  ${"`"}let someString = "here's some
+  inline-code"${"`"} and 
+  
+  ${"`"}${"`"}${"`"}
+    let anotherString = "here's some block-code"
+  ${"`"}${"`"}${"`"}  
+  Also, here's some image 
+  
+  ![](https://fastly.picsum.photos/id/1/5000/3333.jpg?hmac=Asv2DU3rA_5D1xSe22xZK47WEAN0wjWeFOhzd13ujW4)
+  
+  **bold text**
+  > block quote
+  
+  list:
+  - item
+  - another item
+  ` 
+                                           });
+  function handleChange(event) {
+    setState({ input:event.target.value });
+    
+  }
+  const markdownToParse = state.input;
+  return (
+    <div id='main'>
+      <header>
+      <h1>Markdown previewer</h1>
+      </header>
+      <div id="content-container">
+      <div id="editor-container">
+      <textarea id="editor" onChange={handleChange}>{state.input}</textarea>
+      </div>
+      <div id= 'preview-container'>
+        <p id="preview">
+      <ReactMarkdown  remarkPlugins={[remarkGfm]} children={state.input}></ReactMarkdown>
+          
+        </p>
+      </div>
+      </div>
+      </div>
+
+  );
+}
+
+ReactDOM.render(<App/>, document.getElementById('root'))

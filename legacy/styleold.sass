@@ -1,0 +1,49 @@
+$spacing: 32px
+
+
+$dark: #212121
+$dark-secondary: #424242
+$light: #f8f8f8
+$links: #AB47BC
+$links-hover: #CE93D8
+img
+  max-width: 300px
+body
+  background-color: $dark
+  color: $light
+  font-family: montserrat, sans serif
+  font-size: 16px
+#main
+  display: flex
+  flex-direction: column
+  color: $light
+
+
+  a
+    color: $links
+  a:hover
+    color: $links-hover
+
+  header
+    margin-left: $spacing
+    padding: 0
+
+  #content-container
+    display: flex
+    margin: $spacing
+  #editor-container
+    font-family: space mono, roboto mono
+    background-color: $dark-secondary
+    color: $light
+    width: 40vw
+    margin-right: $spacing
+    border-style: none
+    border-radius: 10px
+
+  #editor
+    @extend #editor-container
+    max-width: 90%
+    background-color: transparent
+    min-height: 80vh
+    padding: 16px
+ 
