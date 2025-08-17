@@ -1,23 +1,22 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import  { EditorField } from "components/EditorField.vue"
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+  <div id='main'>
+      <header>
+      <h1>Markdown previewer</h1>
+      </header>
+      <div id="content-container">
+      <EditorField input="hello"/>
+      <div id= 'preview-container'>
+        <p id="preview">
+  <!-- <ReactMarkdown  remarkPlugins={[remarkGfm]} children={state.input}></ReactMarkdown> -->
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+        </p>
+      </div>
+      </div>
+      </div>
 </template>
 
 <style scoped>
