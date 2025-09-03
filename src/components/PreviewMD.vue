@@ -6,6 +6,6 @@ const props = defineProps<{
 </script>
 <template>
   <div id="preview-container">
-    <p id="preview">{{ marked.parse(props.text) }}</p>
+    <p id="preview" v-html="marked.parse(props.text)"></p>
   </div>
 </template>
